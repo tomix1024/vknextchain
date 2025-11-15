@@ -167,6 +167,19 @@ public:
         return reinterpret_cast<U*>(it->second.data());
     }
 
+    template <typename U>
+    std::optional<const U*> getStructOptional() const
+    {
+        if constexpr (StructureType<U>::value == StructureType<T>::value)
+            return &main;
+
+        auto it = chain.find(StructureType<U>::value);
+        if (it == chain.end())
+            return {};
+
+        return reinterpret_cast<const U*>(it->second.data());
+    }
+
     std::optional<std::span<char>> getStructOptional(VkStructureType sType)
     {
         if (sType == main.sType)
@@ -179,7 +192,19 @@ public:
         return it->second;
     }
 
-    std::vector<VkStructureType> enumerateStructureTypes()
+    std::optional<std::span<const char>> getStructOptional(VkStructureType sType) const
+    {
+        if (sType == main.sType)
+            return std::span<const char>(reinterpret_cast<const char*>(&main), sizeof(T));
+
+        auto it = chain.find(sType);
+        if (it == chain.end())
+            return {};
+
+        return it->second;
+    }
+
+    std::vector<VkStructureType> enumerateStructureTypes() const
     {
         std::vector<VkStructureType> keys { main.sType };
         std::transform(chain.begin(), chain.end(), std::back_inserter(keys), [](const auto &entry)->auto { return entry.first; } );
