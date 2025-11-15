@@ -1,4 +1,4 @@
-#define VKNEXTCHAIN_HEADER_VERSION 313
+#define VKNEXTCHAIN_HEADER_VERSION 328
 #define _VKNEXTCHAIN_STR_HELPER(x) #x
 #define _VKNEXTCHAIN_STR(x) _VKNEXTCHAIN_STR_HELPER(x)
 static_assert(VKNEXTCHAIN_HEADER_VERSION == VK_HEADER_VERSION, "vk_next_chain built for header version " _VKNEXTCHAIN_STR(VKNEXTCHAIN_HEADER_VERSION) " but found " _VKNEXTCHAIN_STR(VK_HEADER_VERSION));
@@ -563,15 +563,6 @@ template<> struct StructureType<VkPhysicalDeviceMapMemoryPlacedFeaturesEXT> : pu
 template<> struct StructureType<VkPhysicalDeviceMapMemoryPlacedPropertiesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAP_MEMORY_PLACED_PROPERTIES_EXT> {};
 template<> struct StructureType<VkMemoryMapPlacedInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_MEMORY_MAP_PLACED_INFO_EXT> {};
 template<> struct StructureType<VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT_2_FEATURES_EXT> {};
-template<> struct StructureType<VkSurfacePresentModeEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_EXT> {};
-template<> struct StructureType<VkSurfacePresentScalingCapabilitiesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SURFACE_PRESENT_SCALING_CAPABILITIES_EXT> {};
-template<> struct StructureType<VkSurfacePresentModeCompatibilityEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_COMPATIBILITY_EXT> {};
-template<> struct StructureType<VkPhysicalDeviceSwapchainMaintenance1FeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SWAPCHAIN_MAINTENANCE_1_FEATURES_EXT> {};
-template<> struct StructureType<VkSwapchainPresentFenceInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_FENCE_INFO_EXT> {};
-template<> struct StructureType<VkSwapchainPresentModesCreateInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODES_CREATE_INFO_EXT> {};
-template<> struct StructureType<VkSwapchainPresentModeInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODE_INFO_EXT> {};
-template<> struct StructureType<VkSwapchainPresentScalingCreateInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_SCALING_CREATE_INFO_EXT> {};
-template<> struct StructureType<VkReleaseSwapchainImagesInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_RELEASE_SWAPCHAIN_IMAGES_INFO_EXT> {};
 template<> struct StructureType<VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_PROPERTIES_NV> {};
 template<> struct StructureType<VkGraphicsShaderGroupCreateInfoNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_GRAPHICS_SHADER_GROUP_CREATE_INFO_NV> {};
 template<> struct StructureType<VkGraphicsPipelineShaderGroupsCreateInfoNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_SHADER_GROUPS_CREATE_INFO_NV> {};
@@ -591,8 +582,6 @@ template<> struct StructureType<VkDepthBiasRepresentationInfoEXT> : public std::
 template<> struct StructureType<VkPhysicalDeviceDeviceMemoryReportFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_MEMORY_REPORT_FEATURES_EXT> {};
 template<> struct StructureType<VkDeviceDeviceMemoryReportCreateInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DEVICE_DEVICE_MEMORY_REPORT_CREATE_INFO_EXT> {};
 template<> struct StructureType<VkDeviceMemoryReportCallbackDataEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DEVICE_MEMORY_REPORT_CALLBACK_DATA_EXT> {};
-template<> struct StructureType<VkPhysicalDeviceRobustness2FeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_FEATURES_EXT> {};
-template<> struct StructureType<VkPhysicalDeviceRobustness2PropertiesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_PROPERTIES_EXT> {};
 template<> struct StructureType<VkSamplerCustomBorderColorCreateInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SAMPLER_CUSTOM_BORDER_COLOR_CREATE_INFO_EXT> {};
 template<> struct StructureType<VkPhysicalDeviceCustomBorderColorPropertiesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUSTOM_BORDER_COLOR_PROPERTIES_EXT> {};
 template<> struct StructureType<VkPhysicalDeviceCustomBorderColorFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUSTOM_BORDER_COLOR_FEATURES_EXT> {};
@@ -616,19 +605,14 @@ template<> struct StructureType<VkVideoEncodeSessionParametersFeedbackInfoKHR> :
 template<> struct StructureType<VkPhysicalDeviceDiagnosticsConfigFeaturesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DIAGNOSTICS_CONFIG_FEATURES_NV> {};
 template<> struct StructureType<VkDeviceDiagnosticsConfigCreateInfoNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DEVICE_DIAGNOSTICS_CONFIG_CREATE_INFO_NV> {};
 #ifdef VK_ENABLE_BETA_EXTENSIONS
-template<> struct StructureType<VkCudaModuleCreateInfoNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_CUDA_MODULE_CREATE_INFO_NV> {};
 #endif
 #ifdef VK_ENABLE_BETA_EXTENSIONS
-template<> struct StructureType<VkCudaFunctionCreateInfoNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_CUDA_FUNCTION_CREATE_INFO_NV> {};
 #endif
 #ifdef VK_ENABLE_BETA_EXTENSIONS
-template<> struct StructureType<VkCudaLaunchInfoNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_CUDA_LAUNCH_INFO_NV> {};
 #endif
 #ifdef VK_ENABLE_BETA_EXTENSIONS
-template<> struct StructureType<VkPhysicalDeviceCudaKernelLaunchFeaturesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUDA_KERNEL_LAUNCH_FEATURES_NV> {};
 #endif
 #ifdef VK_ENABLE_BETA_EXTENSIONS
-template<> struct StructureType<VkPhysicalDeviceCudaKernelLaunchPropertiesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUDA_KERNEL_LAUNCH_PROPERTIES_NV> {};
 #endif
 template<> struct StructureType<VkPhysicalDeviceTileShadingFeaturesQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_SHADING_FEATURES_QCOM> {};
 template<> struct StructureType<VkPhysicalDeviceTileShadingPropertiesQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_SHADING_PROPERTIES_QCOM> {};
@@ -688,7 +672,6 @@ template<> struct StructureType<VkDeviceAddressBindingCallbackDataEXT> : public 
 template<> struct StructureType<VkPhysicalDeviceDepthClipControlFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLIP_CONTROL_FEATURES_EXT> {};
 template<> struct StructureType<VkPipelineViewportDepthClipControlCreateInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_DEPTH_CLIP_CONTROL_CREATE_INFO_EXT> {};
 template<> struct StructureType<VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIMITIVE_TOPOLOGY_LIST_RESTART_FEATURES_EXT> {};
-template<> struct StructureType<VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_MODE_FIFO_LATEST_READY_FEATURES_EXT> {};
 template<> struct StructureType<VkSubpassShadingPipelineCreateInfoHUAWEI> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI> {};
 template<> struct StructureType<VkPhysicalDeviceSubpassShadingFeaturesHUAWEI> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_SHADING_FEATURES_HUAWEI> {};
 template<> struct StructureType<VkPhysicalDeviceSubpassShadingPropertiesHUAWEI> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_SHADING_PROPERTIES_HUAWEI> {};
@@ -707,6 +690,11 @@ template<> struct StructureType<VkPhysicalDeviceColorWriteEnableFeaturesEXT> : p
 template<> struct StructureType<VkPipelineColorWriteCreateInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PIPELINE_COLOR_WRITE_CREATE_INFO_EXT> {};
 template<> struct StructureType<VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIMITIVES_GENERATED_QUERY_FEATURES_EXT> {};
 template<> struct StructureType<VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_MAINTENANCE_1_FEATURES_KHR> {};
+template<> struct StructureType<VkPhysicalDeviceShaderUntypedPointersFeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_UNTYPED_POINTERS_FEATURES_KHR> {};
+template<> struct StructureType<VkPhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_RGB_CONVERSION_FEATURES_VALVE> {};
+template<> struct StructureType<VkVideoEncodeRgbConversionCapabilitiesVALVE> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_RGB_CONVERSION_CAPABILITIES_VALVE> {};
+template<> struct StructureType<VkVideoEncodeProfileRgbConversionInfoVALVE> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_PROFILE_RGB_CONVERSION_INFO_VALVE> {};
+template<> struct StructureType<VkVideoEncodeSessionRgbConversionCreateInfoVALVE> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_SESSION_RGB_CONVERSION_CREATE_INFO_VALVE> {};
 template<> struct StructureType<VkPhysicalDeviceImageViewMinLodFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_VIEW_MIN_LOD_FEATURES_EXT> {};
 template<> struct StructureType<VkImageViewMinLodCreateInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_IMAGE_VIEW_MIN_LOD_CREATE_INFO_EXT> {};
 template<> struct StructureType<VkPhysicalDeviceMultiDrawFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_FEATURES_EXT> {};
@@ -752,7 +740,6 @@ template<> struct StructureType<VkRenderPassStripeBeginInfoARM> : public std::in
 template<> struct StructureType<VkRenderPassStripeInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_RENDER_PASS_STRIPE_INFO_ARM> {};
 template<> struct StructureType<VkRenderPassStripeSubmitInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_RENDER_PASS_STRIPE_SUBMIT_INFO_ARM> {};
 template<> struct StructureType<VkPhysicalDeviceCopyMemoryIndirectFeaturesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_FEATURES_NV> {};
-template<> struct StructureType<VkPhysicalDeviceCopyMemoryIndirectPropertiesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_PROPERTIES_NV> {};
 template<> struct StructureType<VkPhysicalDeviceMemoryDecompressionFeaturesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_FEATURES_NV> {};
 template<> struct StructureType<VkPhysicalDeviceMemoryDecompressionPropertiesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_PROPERTIES_NV> {};
 template<> struct StructureType<VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_COMPUTE_FEATURES_NV> {};
@@ -778,6 +765,30 @@ template<> struct StructureType<VkRenderPassCreationFeedbackCreateInfoEXT> : pub
 template<> struct StructureType<VkRenderPassSubpassFeedbackCreateInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_RENDER_PASS_SUBPASS_FEEDBACK_CREATE_INFO_EXT> {};
 template<> struct StructureType<VkDirectDriverLoadingInfoLUNARG> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DIRECT_DRIVER_LOADING_INFO_LUNARG> {};
 template<> struct StructureType<VkDirectDriverLoadingListLUNARG> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DIRECT_DRIVER_LOADING_LIST_LUNARG> {};
+template<> struct StructureType<VkTensorCreateInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TENSOR_CREATE_INFO_ARM> {};
+template<> struct StructureType<VkTensorViewCreateInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TENSOR_VIEW_CREATE_INFO_ARM> {};
+template<> struct StructureType<VkBindTensorMemoryInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_BIND_TENSOR_MEMORY_INFO_ARM> {};
+template<> struct StructureType<VkWriteDescriptorSetTensorARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_TENSOR_ARM> {};
+template<> struct StructureType<VkPhysicalDeviceTensorPropertiesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TENSOR_PROPERTIES_ARM> {};
+template<> struct StructureType<VkTensorFormatPropertiesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TENSOR_FORMAT_PROPERTIES_ARM> {};
+template<> struct StructureType<VkTensorDescriptionARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TENSOR_DESCRIPTION_ARM> {};
+template<> struct StructureType<VkTensorMemoryRequirementsInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TENSOR_MEMORY_REQUIREMENTS_INFO_ARM> {};
+template<> struct StructureType<VkTensorMemoryBarrierARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TENSOR_MEMORY_BARRIER_ARM> {};
+template<> struct StructureType<VkPhysicalDeviceTensorFeaturesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TENSOR_FEATURES_ARM> {};
+template<> struct StructureType<VkDeviceTensorMemoryRequirementsARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DEVICE_TENSOR_MEMORY_REQUIREMENTS_ARM> {};
+template<> struct StructureType<VkCopyTensorInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_COPY_TENSOR_INFO_ARM> {};
+template<> struct StructureType<VkTensorCopyARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TENSOR_COPY_ARM> {};
+template<> struct StructureType<VkTensorDependencyInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TENSOR_DEPENDENCY_INFO_ARM> {};
+template<> struct StructureType<VkMemoryDedicatedAllocateInfoTensorARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO_TENSOR_ARM> {};
+template<> struct StructureType<VkPhysicalDeviceExternalTensorInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_TENSOR_INFO_ARM> {};
+template<> struct StructureType<VkExternalTensorPropertiesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_EXTERNAL_TENSOR_PROPERTIES_ARM> {};
+template<> struct StructureType<VkExternalMemoryTensorCreateInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_TENSOR_CREATE_INFO_ARM> {};
+template<> struct StructureType<VkPhysicalDeviceDescriptorBufferTensorFeaturesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_TENSOR_FEATURES_ARM> {};
+template<> struct StructureType<VkPhysicalDeviceDescriptorBufferTensorPropertiesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_TENSOR_PROPERTIES_ARM> {};
+template<> struct StructureType<VkDescriptorGetTensorInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DESCRIPTOR_GET_TENSOR_INFO_ARM> {};
+template<> struct StructureType<VkTensorCaptureDescriptorDataInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TENSOR_CAPTURE_DESCRIPTOR_DATA_INFO_ARM> {};
+template<> struct StructureType<VkTensorViewCaptureDescriptorDataInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TENSOR_VIEW_CAPTURE_DESCRIPTOR_DATA_INFO_ARM> {};
+template<> struct StructureType<VkFrameBoundaryTensorsARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_FRAME_BOUNDARY_TENSORS_ARM> {};
 template<> struct StructureType<VkPhysicalDeviceShaderModuleIdentifierFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MODULE_IDENTIFIER_FEATURES_EXT> {};
 template<> struct StructureType<VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MODULE_IDENTIFIER_PROPERTIES_EXT> {};
 template<> struct StructureType<VkPipelineShaderStageModuleIdentifierCreateInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_MODULE_IDENTIFIER_CREATE_INFO_EXT> {};
@@ -794,6 +805,16 @@ template<> struct StructureType<VkPhysicalDeviceLegacyDitheringFeaturesEXT> : pu
 template<> struct StructureType<VkPhysicalDeviceAntiLagFeaturesAMD> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ANTI_LAG_FEATURES_AMD> {};
 template<> struct StructureType<VkAntiLagDataAMD> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_ANTI_LAG_DATA_AMD> {};
 template<> struct StructureType<VkAntiLagPresentationInfoAMD> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_ANTI_LAG_PRESENTATION_INFO_AMD> {};
+#ifdef VK_ENABLE_BETA_EXTENSIONS
+#endif
+#ifdef VK_ENABLE_BETA_EXTENSIONS
+#endif
+template<> struct StructureType<VkSurfaceCapabilitiesPresentId2KHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_PRESENT_ID_2_KHR> {};
+template<> struct StructureType<VkPresentId2KHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PRESENT_ID_2_KHR> {};
+template<> struct StructureType<VkPhysicalDevicePresentId2FeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_ID_2_FEATURES_KHR> {};
+template<> struct StructureType<VkSurfaceCapabilitiesPresentWait2KHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_PRESENT_WAIT_2_KHR> {};
+template<> struct StructureType<VkPhysicalDevicePresentWait2FeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_WAIT_2_FEATURES_KHR> {};
+template<> struct StructureType<VkPresentWait2InfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PRESENT_WAIT_2_INFO_KHR> {};
 template<> struct StructureType<VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_POSITION_FETCH_FEATURES_KHR> {};
 template<> struct StructureType<VkPhysicalDeviceShaderObjectFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_OBJECT_FEATURES_EXT> {};
 template<> struct StructureType<VkPhysicalDeviceShaderObjectPropertiesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_OBJECT_PROPERTIES_EXT> {};
@@ -812,6 +833,15 @@ template<> struct StructureType<VkPhysicalDeviceTilePropertiesFeaturesQCOM> : pu
 template<> struct StructureType<VkTilePropertiesQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TILE_PROPERTIES_QCOM> {};
 template<> struct StructureType<VkPhysicalDeviceAmigoProfilingFeaturesSEC> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_AMIGO_PROFILING_FEATURES_SEC> {};
 template<> struct StructureType<VkAmigoProfilingSubmitInfoSEC> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_AMIGO_PROFILING_SUBMIT_INFO_SEC> {};
+template<> struct StructureType<VkSurfacePresentModeKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_KHR> {};
+template<> struct StructureType<VkSurfacePresentScalingCapabilitiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SURFACE_PRESENT_SCALING_CAPABILITIES_KHR> {};
+template<> struct StructureType<VkSurfacePresentModeCompatibilityKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_COMPATIBILITY_KHR> {};
+template<> struct StructureType<VkPhysicalDeviceSwapchainMaintenance1FeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SWAPCHAIN_MAINTENANCE_1_FEATURES_KHR> {};
+template<> struct StructureType<VkSwapchainPresentFenceInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_FENCE_INFO_KHR> {};
+template<> struct StructureType<VkSwapchainPresentModesCreateInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODES_CREATE_INFO_KHR> {};
+template<> struct StructureType<VkSwapchainPresentModeInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODE_INFO_KHR> {};
+template<> struct StructureType<VkSwapchainPresentScalingCreateInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_SCALING_CREATE_INFO_KHR> {};
+template<> struct StructureType<VkReleaseSwapchainImagesInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_RELEASE_SWAPCHAIN_IMAGES_INFO_KHR> {};
 template<> struct StructureType<VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_VIEWPORTS_FEATURES_QCOM> {};
 template<> struct StructureType<VkPhysicalDeviceRayTracingInvocationReorderFeaturesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_INVOCATION_REORDER_FEATURES_NV> {};
 template<> struct StructureType<VkPhysicalDeviceRayTracingInvocationReorderPropertiesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_INVOCATION_REORDER_PROPERTIES_NV> {};
@@ -842,6 +872,26 @@ template<> struct StructureType<VkLatencySurfaceCapabilitiesNV> : public std::in
 template<> struct StructureType<VkPhysicalDeviceCooperativeMatrixFeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_FEATURES_KHR> {};
 template<> struct StructureType<VkCooperativeMatrixPropertiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_COOPERATIVE_MATRIX_PROPERTIES_KHR> {};
 template<> struct StructureType<VkPhysicalDeviceCooperativeMatrixPropertiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_PROPERTIES_KHR> {};
+template<> struct StructureType<VkDataGraphPipelineCreateInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_CREATE_INFO_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineSessionCreateInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SESSION_CREATE_INFO_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineResourceInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_RESOURCE_INFO_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineConstantARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_CONSTANT_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineSessionMemoryRequirementsInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SESSION_MEMORY_REQUIREMENTS_INFO_ARM> {};
+template<> struct StructureType<VkBindDataGraphPipelineSessionMemoryInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_BIND_DATA_GRAPH_PIPELINE_SESSION_MEMORY_INFO_ARM> {};
+template<> struct StructureType<VkPhysicalDeviceDataGraphFeaturesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DATA_GRAPH_FEATURES_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineShaderModuleCreateInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SHADER_MODULE_CREATE_INFO_ARM> {};
+template<> struct StructureType<VkDataGraphPipelinePropertyQueryResultARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_PROPERTY_QUERY_RESULT_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_INFO_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineCompilerControlCreateInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_COMPILER_CONTROL_CREATE_INFO_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineSessionBindPointRequirementsInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SESSION_BIND_POINT_REQUIREMENTS_INFO_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineSessionBindPointRequirementARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SESSION_BIND_POINT_REQUIREMENT_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineIdentifierCreateInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_IDENTIFIER_CREATE_INFO_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineDispatchInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_DISPATCH_INFO_ARM> {};
+template<> struct StructureType<VkDataGraphProcessingEngineCreateInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PROCESSING_ENGINE_CREATE_INFO_ARM> {};
+template<> struct StructureType<VkQueueFamilyDataGraphProcessingEnginePropertiesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_QUEUE_FAMILY_DATA_GRAPH_PROCESSING_ENGINE_PROPERTIES_ARM> {};
+template<> struct StructureType<VkQueueFamilyDataGraphPropertiesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_QUEUE_FAMILY_DATA_GRAPH_PROPERTIES_ARM> {};
+template<> struct StructureType<VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_QUEUE_FAMILY_DATA_GRAPH_PROCESSING_ENGINE_INFO_ARM> {};
+template<> struct StructureType<VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_CONSTANT_TENSOR_SEMI_STRUCTURED_SPARSITY_INFO_ARM> {};
 template<> struct StructureType<VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_RENDER_AREAS_FEATURES_QCOM> {};
 template<> struct StructureType<VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_MULTIVIEW_PER_VIEW_RENDER_AREAS_RENDER_PASS_BEGIN_INFO_QCOM> {};
 template<> struct StructureType<VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMPUTE_SHADER_DERIVATIVES_FEATURES_KHR> {};
@@ -862,6 +912,10 @@ template<> struct StructureType<VkVideoEncodeAV1RateControlLayerInfoKHR> : publi
 template<> struct StructureType<VkVideoEncodeAV1QualityLevelPropertiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_QUALITY_LEVEL_PROPERTIES_KHR> {};
 template<> struct StructureType<VkVideoEncodeAV1SessionCreateInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_SESSION_CREATE_INFO_KHR> {};
 template<> struct StructureType<VkVideoEncodeAV1GopRemainingFrameInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_GOP_REMAINING_FRAME_INFO_KHR> {};
+template<> struct StructureType<VkPhysicalDeviceVideoDecodeVP9FeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_DECODE_VP9_FEATURES_KHR> {};
+template<> struct StructureType<VkVideoDecodeVP9CapabilitiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_DECODE_VP9_CAPABILITIES_KHR> {};
+template<> struct StructureType<VkVideoDecodeVP9PictureInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_DECODE_VP9_PICTURE_INFO_KHR> {};
+template<> struct StructureType<VkVideoDecodeVP9ProfileInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_DECODE_VP9_PROFILE_INFO_KHR> {};
 template<> struct StructureType<VkPhysicalDeviceVideoMaintenance1FeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_MAINTENANCE_1_FEATURES_KHR> {};
 template<> struct StructureType<VkVideoInlineQueryInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_INLINE_QUERY_INFO_KHR> {};
 template<> struct StructureType<VkPhysicalDevicePerStageDescriptorSetFeaturesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PER_STAGE_DESCRIPTOR_SET_FEATURES_NV> {};
@@ -875,6 +929,8 @@ template<> struct StructureType<VkPhysicalDeviceYcbcrDegammaFeaturesQCOM> : publ
 template<> struct StructureType<VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_YCBCR_DEGAMMA_CREATE_INFO_QCOM> {};
 template<> struct StructureType<VkPhysicalDeviceCubicClampFeaturesQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUBIC_CLAMP_FEATURES_QCOM> {};
 template<> struct StructureType<VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ATTACHMENT_FEEDBACK_LOOP_DYNAMIC_STATE_FEATURES_EXT> {};
+template<> struct StructureType<VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_UNIFIED_IMAGE_LAYOUTS_FEATURES_KHR> {};
+template<> struct StructureType<VkAttachmentFeedbackLoopInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_ATTACHMENT_FEEDBACK_LOOP_INFO_EXT> {};
 template<> struct StructureType<VkPhysicalDeviceLayeredDriverPropertiesMSFT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LAYERED_DRIVER_PROPERTIES_MSFT> {};
 template<> struct StructureType<VkCalibratedTimestampInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_CALIBRATED_TIMESTAMP_INFO_KHR> {};
 template<> struct StructureType<VkSetDescriptorBufferOffsetsInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SET_DESCRIPTOR_BUFFER_OFFSETS_INFO_EXT> {};
@@ -885,8 +941,17 @@ template<> struct StructureType<VkPhysicalDeviceTileMemoryHeapPropertiesQCOM> : 
 template<> struct StructureType<VkTileMemoryRequirementsQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TILE_MEMORY_REQUIREMENTS_QCOM> {};
 template<> struct StructureType<VkTileMemoryBindInfoQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TILE_MEMORY_BIND_INFO_QCOM> {};
 template<> struct StructureType<VkTileMemorySizeInfoQCOM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_TILE_MEMORY_SIZE_INFO_QCOM> {};
+template<> struct StructureType<VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_FEATURES_KHR> {};
+template<> struct StructureType<VkPhysicalDeviceCopyMemoryIndirectPropertiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_PROPERTIES_KHR> {};
+template<> struct StructureType<VkCopyMemoryIndirectInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_COPY_MEMORY_INDIRECT_INFO_KHR> {};
+template<> struct StructureType<VkCopyMemoryToImageIndirectInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_COPY_MEMORY_TO_IMAGE_INDIRECT_INFO_KHR> {};
 template<> struct StructureType<VkDisplaySurfaceStereoCreateInfoNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DISPLAY_SURFACE_STEREO_CREATE_INFO_NV> {};
 template<> struct StructureType<VkDisplayModeStereoPropertiesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_DISPLAY_MODE_STEREO_PROPERTIES_NV> {};
+template<> struct StructureType<VkVideoEncodeIntraRefreshCapabilitiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_INTRA_REFRESH_CAPABILITIES_KHR> {};
+template<> struct StructureType<VkVideoEncodeSessionIntraRefreshCreateInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_SESSION_INTRA_REFRESH_CREATE_INFO_KHR> {};
+template<> struct StructureType<VkVideoEncodeIntraRefreshInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_INTRA_REFRESH_INFO_KHR> {};
+template<> struct StructureType<VkVideoReferenceIntraRefreshInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_REFERENCE_INTRA_REFRESH_INFO_KHR> {};
+template<> struct StructureType<VkPhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_INTRA_REFRESH_FEATURES_KHR> {};
 template<> struct StructureType<VkVideoEncodeQuantizationMapCapabilitiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUANTIZATION_MAP_CAPABILITIES_KHR> {};
 template<> struct StructureType<VkVideoFormatQuantizationMapPropertiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_FORMAT_QUANTIZATION_MAP_PROPERTIES_KHR> {};
 template<> struct StructureType<VkVideoEncodeQuantizationMapInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUANTIZATION_MAP_INFO_KHR> {};
@@ -911,6 +976,7 @@ template<> struct StructureType<VkPhysicalDeviceLayeredApiPropertiesKHR> : publi
 template<> struct StructureType<VkPhysicalDeviceLayeredApiVulkanPropertiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LAYERED_API_VULKAN_PROPERTIES_KHR> {};
 template<> struct StructureType<VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT16_VECTOR_FEATURES_NV> {};
 template<> struct StructureType<VkPhysicalDeviceShaderReplicatedCompositesFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_REPLICATED_COMPOSITES_FEATURES_EXT> {};
+template<> struct StructureType<VkPhysicalDeviceShaderFloat8FeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT8_FEATURES_EXT> {};
 template<> struct StructureType<VkPhysicalDeviceRayTracingValidationFeaturesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_VALIDATION_FEATURES_NV> {};
 template<> struct StructureType<VkPhysicalDeviceClusterAccelerationStructureFeaturesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_ACCELERATION_STRUCTURE_FEATURES_NV> {};
 template<> struct StructureType<VkPhysicalDeviceClusterAccelerationStructurePropertiesNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_ACCELERATION_STRUCTURE_PROPERTIES_NV> {};
@@ -947,6 +1013,9 @@ template<> struct StructureType<VkPhysicalDeviceImageAlignmentControlPropertiesM
 template<> struct StructureType<VkImageAlignmentControlCreateInfoMESA> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_IMAGE_ALIGNMENT_CONTROL_CREATE_INFO_MESA> {};
 template<> struct StructureType<VkPhysicalDeviceDepthClampControlFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLAMP_CONTROL_FEATURES_EXT> {};
 template<> struct StructureType<VkPipelineViewportDepthClampControlCreateInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_DEPTH_CLAMP_CONTROL_CREATE_INFO_EXT> {};
+template<> struct StructureType<VkPhysicalDeviceMaintenance9FeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_9_FEATURES_KHR> {};
+template<> struct StructureType<VkPhysicalDeviceMaintenance9PropertiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_9_PROPERTIES_KHR> {};
+template<> struct StructureType<VkQueueFamilyOwnershipTransferPropertiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_QUEUE_FAMILY_OWNERSHIP_TRANSFER_PROPERTIES_KHR> {};
 template<> struct StructureType<VkPhysicalDeviceVideoMaintenance2FeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_MAINTENANCE_2_FEATURES_KHR> {};
 template<> struct StructureType<VkVideoDecodeH264InlineSessionParametersInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_INLINE_SESSION_PARAMETERS_INFO_KHR> {};
 template<> struct StructureType<VkVideoDecodeH265InlineSessionParametersInfoKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_INLINE_SESSION_PARAMETERS_INFO_KHR> {};
@@ -959,6 +1028,12 @@ template<> struct StructureType<VkPhysicalDeviceCooperativeMatrix2PropertiesNV> 
 template<> struct StructureType<VkPhysicalDevicePipelineOpacityMicromapFeaturesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_OPACITY_MICROMAP_FEATURES_ARM> {};
 template<> struct StructureType<VkPhysicalDeviceDepthClampZeroOneFeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLAMP_ZERO_ONE_FEATURES_KHR> {};
 template<> struct StructureType<VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_ROBUSTNESS_FEATURES_EXT> {};
+template<> struct StructureType<VkPhysicalDeviceFormatPackFeaturesARM> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FORMAT_PACK_FEATURES_ARM> {};
+template<> struct StructureType<VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_LAYERED_FEATURES_VALVE> {};
+template<> struct StructureType<VkPhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_LAYERED_PROPERTIES_VALVE> {};
+template<> struct StructureType<VkPipelineFragmentDensityMapLayeredCreateInfoVALVE> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PIPELINE_FRAGMENT_DENSITY_MAP_LAYERED_CREATE_INFO_VALVE> {};
+template<> struct StructureType<VkPhysicalDeviceRobustness2FeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_FEATURES_KHR> {};
+template<> struct StructureType<VkPhysicalDeviceRobustness2PropertiesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_PROPERTIES_KHR> {};
 #ifdef VK_ENABLE_BETA_EXTENSIONS
 template<> struct StructureType<VkSetPresentConfigNV> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_SET_PRESENT_CONFIG_NV> {};
 #endif
@@ -969,3 +1044,6 @@ template<> struct StructureType<VkPhysicalDeviceFragmentDensityMapOffsetFeatures
 template<> struct StructureType<VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_EXT> {};
 template<> struct StructureType<VkRenderPassFragmentDensityMapOffsetEndInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_RENDER_PASS_FRAGMENT_DENSITY_MAP_OFFSET_END_INFO_EXT> {};
 template<> struct StructureType<VkRenderingEndInfoEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_RENDERING_END_INFO_EXT> {};
+template<> struct StructureType<VkPhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_DEVICE_MEMORY_FEATURES_EXT> {};
+template<> struct StructureType<VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_MODE_FIFO_LATEST_READY_FEATURES_KHR> {};
+template<> struct StructureType<VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC> : public std::integral_constant<VkStructureType, VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CACHE_INCREMENTAL_MODE_FEATURES_SEC> {};
